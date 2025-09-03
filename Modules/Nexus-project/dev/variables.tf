@@ -28,6 +28,8 @@ variable instance_type {
     type = string
 }
 
-# variable ami_id  {
-#     type = string
-# }
+variable port {
+  type = list(number)
+  description = "Provide port"
+}
+
