@@ -19,7 +19,6 @@ variable azs {
 }
 
 
-
 variable ip_on_launch {
     type = bool
 }
@@ -28,8 +27,8 @@ variable instance_type {
     type = string
 }
 
-variable port {
-  type = list(number)
-  description = "Provide port"
+variable vpc_id {
+  type = string
+  
 }
 

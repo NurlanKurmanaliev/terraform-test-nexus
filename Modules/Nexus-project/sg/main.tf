@@ -1,36 +1,36 @@
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id = module.vpc.vpc_id
+  vpc_id = var.vpc_id 
 
   ingress {
     description      = "TLS from VPC"
-    from_port        = var.port[0]
-    to_port          = var.port[0]
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
     ingress {
     description      = "TLS from VPC"
-    from_port        = var.port[1]
-    to_port          = var.port[1]
+    from_port        = 8081
+    to_port          = 8081
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
     ingress {
     description      = "TLS from VPC"
-    from_port        = var.port[2]
-    to_port          = var.port[2]
+    from_port        = 22
+    to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
     description      = "TLS from VPC"
-    from_port        = var.port[3]
-    to_port          = var.port[3]
+    from_port        = 443
+    to_port          = 443
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }

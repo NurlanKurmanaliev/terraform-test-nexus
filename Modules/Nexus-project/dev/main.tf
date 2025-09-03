@@ -16,13 +16,13 @@ module vpc {
 module ec2 {
     source = "../ec2"
     instance_type = var.instance_type
-    subnet_id = module.vpc.subnet
+    subnet_id = module.vpc.aws_subnet
     region = var.region
-    
-    
+    sg_id = module.sg.sg_id
 }
 
 module sg {
     source = "../sg"
-    port = var.port
+    vpc_id = module.vpc.vpc_id
+
 }

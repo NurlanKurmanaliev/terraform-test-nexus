@@ -1,4 +1,4 @@
-variable port {
-  type = list(number)
-  description = "Provide port"
+variable vpc_id {
+  type = string
+  
 }

@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   ami = data.aws_ami.ubuntu.id
   key_name = aws_key_pair.deployer.key_name
   instance_type = var.instance_type
-  vpc_security_group_ids = module.vpc.vpc_id
+  vpc_security_group_ids = [var.sg_id]
   subnet_id = var.subnet_id
   
   tags = local.common_tags
