@@ -4,7 +4,6 @@ variable instance_type {
 
 variable region {
     type = string
-    description = "Provide region"
 }
 
 variable subnet_id {
